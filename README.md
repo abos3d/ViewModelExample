@@ -9,4 +9,4 @@ the main idea of it is to solve the problems of onConfigrationChanged like rotat
 
 and to solve problems when one fragment tries to connect with another fragment
 
-no more callbacks and headace
+no more callbacks and headache
