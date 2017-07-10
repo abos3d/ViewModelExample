@@ -10,3 +10,16 @@ the main idea of it is to solve the problems of onConfigrationChanged like rotat
 and to solve problems when one fragment tries to connect with another fragment
 
 no more callbacks and headache
+
+
+مثال على View model
+
+في هذا المشروع هناك مثال بسيط على استخدام View model في الاندرويد
+
+الذي تم الاعلان عنه في مؤتمر قوقل للمطورين 2017
+
+والفكرة الرئيسية من ذلك هو حل مشاكل دوران الشاشة إلى الوضع الافقي او العكس او مايشابه ذلك ويسبب onConfigrationChanged 
+
+وحل مشكلة عندما يحاول fragment التواصل مع fragment آخر
+
+لا مزيد من callbacks والصداع
