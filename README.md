@@ -11,6 +11,9 @@ and to solve problems when one fragment tries to connect with another fragment
 
 no more callbacks and headache
 
+UPDATE 1 :
+now it will support if the app has been terminated and reopned by the user
+
 
 مثال على View model
 
@@ -23,3 +26,6 @@ no more callbacks and headache
 وحل مشكلة عندما يحاول fragment التواصل مع fragment آخر
 
 لا مزيد من callbacks والصداع
+
+تحديث 1 : 
+تم دعم في حالة قام النظام بإغلاق التطبيق ثم تم الرجوع له من المستخدم
