@@ -12,7 +12,7 @@ and to solve problems when one fragment tries to connect with another fragment
 no more callbacks and headache
 
 UPDATE 1 :
-now it will support if the app has been terminated and reopned by the user
+now it will support if the app has been terminated and reopened by the user
 
 
 مثال على View model
