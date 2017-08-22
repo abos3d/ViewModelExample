@@ -5,7 +5,7 @@ In this project there is a simple example of using ViewModel of android
 
 ViewModel has been announced in IO17
 
-the main idea of it is to solve the problems of onConfigrationChanged like rotation
+the main idea of it is to solve the problems of onConfigurationChanged like rotation
 
 and to solve problems when one fragment tries to connect with another fragment
 
@@ -21,7 +21,7 @@ now it will support if the app has been terminated and reopened by the user
 
 الذي تم الاعلان عنه في مؤتمر قوقل للمطورين 2017
 
-والفكرة الرئيسية من ذلك هو حل مشاكل دوران الشاشة إلى الوضع الافقي او العكس او مايشابه ذلك ويسبب onConfigrationChanged 
+والفكرة الرئيسية من ذلك هو حل مشاكل دوران الشاشة إلى الوضع الافقي او العكس او مايشابه ذلك ويسبب onConfigurationChanged
 
 وحل مشكلة عندما يحاول fragment التواصل مع fragment آخر
 
