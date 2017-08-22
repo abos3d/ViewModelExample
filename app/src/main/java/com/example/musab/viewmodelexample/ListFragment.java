@@ -16,6 +16,8 @@ public class ListFragment extends Fragment {
 
     public static String TAG = "ListFragment";
     SharedDataViewModel model;
+    int selectedItem = -1;
+    private final String SELECTED_ITEM_KEY = TAG + "SELECTED_ITEM_KEY";
 
 
     public ListFragment() {
@@ -30,6 +32,8 @@ public class ListFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        if (savedInstanceState != null && savedInstanceState.containsKey(SELECTED_ITEM_KEY))//check if it's new or has been killed and rerun
+            selectedItem = savedInstanceState.getInt(SELECTED_ITEM_KEY);
 
         model = ViewModelProviders.of(getActivity()).get(SharedDataViewModel.class);
     }
@@ -40,9 +44,11 @@ public class ListFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_item_list, container, false);
 
         OnListItemClicked mListener = new OnListItemClicked() {
+
             @Override
-            public void onListFragmentInteraction(DummyItem item) {
-                model.select(item);
+            public void onListFragmentInteraction(DummyItem item, int position) {
+                model.select(item);//now trigger the view model live data to handle the selected item on other fragment
+                selectedItem = position;
             }
         };
 
@@ -50,14 +56,24 @@ public class ListFragment extends Fragment {
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
             RecyclerView recyclerView = (RecyclerView) view;
-                recyclerView.setLayoutManager(new LinearLayoutManager(context));
+            recyclerView.setLayoutManager(new LinearLayoutManager(context));
             recyclerView.setAdapter(new MyItemRecyclerViewAdapter(DummyContent.ITEMS, mListener));
         }
+
+        if (selectedItem != -1)
+            model.select(DummyContent.ITEMS.get(selectedItem));//now trigger the view model live data to handle the selected item on other fragment
+
         return view;
     }
 
 
     public interface OnListItemClicked {
-        void onListFragmentInteraction(DummyItem item);
+        void onListFragmentInteraction(DummyItem item, int position);
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt(SELECTED_ITEM_KEY, selectedItem);//here we save the selected item index to handle if the app has been killed
     }
 }
